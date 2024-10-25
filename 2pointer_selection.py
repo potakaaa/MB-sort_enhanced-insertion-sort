@@ -5,7 +5,7 @@ def enhanced_selection(arr):
         last = len(arr) - 1 - i
         min_idx = i
         max_idx = len(arr) - 1 - i
-        p1 = 1
+        p1 = 1 + i
         p2 = last - 1
         print(arr)
 
@@ -46,7 +46,7 @@ def enhanced_selection(arr):
 
         
 
-arr1 = [2, 3, 1, 2, 4, 3, 0, 0]
+arr1 = [2, 3, 1, 2, 4, 3, 0, 0,5, 6, 7, 12]
 
 print(enhanced_selection(arr1))
 
