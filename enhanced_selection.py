@@ -31,8 +31,8 @@ def selectionSort(array):
          # swapping the elements to sort the array
         (array[ind], array[min_index]) = (array[min_index], array[ind])
 
-    print("--- %s seconds ---" % (time.time() - start_time))
     runtime = time.time() - start_time
+    print(f"--- Normal Selection runtime: {runtime} seconds ---")
 
     return array, runtime
 

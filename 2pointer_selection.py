@@ -1,13 +1,14 @@
-import random
+import random, time
 from algo_testcases import test_algo_works
+from enhanced_selection import selectionSort
 
 def enhanced_selection(arr):
-    # for even number of elements only
+    start_time = time.time()
     
     for i in range((len(arr) // 2)):
         last = len(arr) - 1 - i
         min_idx = i 
-        max_idx = len(arr) - 1 - i
+        max_idx = i
         
         #print(arr)
 
@@ -18,8 +19,8 @@ def enhanced_selection(arr):
             if arr[p1] < arr[min_idx] or arr[p2] < arr[min_idx]:
                 if arr[p1] < arr[min_idx]:
                     min_idx = p1
-                    print("p1 at ", p1," found Min Index: ", min_idx, " with value ", arr[min_idx])
-                    print("p1 at ", p1," found Min Index: ", min_idx, " with value ", arr[min_idx])
+                    #print("p1 at ", p1," found Min Index: ", min_idx, " with value ", arr[min_idx])
+                    #print("p1 at ", p1," found Min Index: ", min_idx, " with value ", arr[min_idx])
                 if arr[p2] < arr[min_idx]:
                     min_idx = p2
                     #print("p2 at ", p2," found Min Index: ", min_idx, " with value ", arr[min_idx])
@@ -46,8 +47,10 @@ def enhanced_selection(arr):
             arr[last], arr[max_idx] = arr[max_idx], arr[last]
         #print(arr)
 
-    
-    return arr
+    runtime = time.time() - start_time
+    print(f"--- Enhanced Selection runtime: {runtime} seconds ---")
+
+    return arr, runtime
 
         
         
@@ -61,21 +64,29 @@ arrn = [10, 2, 18, 36, 52, 68, 84, 100, 14, 28,
         86, 100, 18, 32, 46, 60, 74]
 
 
-n = 10
+n = 100
 
-arr1 = random.sample(range(1, 101), n)
+arr1 = random.choices(range(1, 10), k = n)
 arr1_copy = arr1.copy()
-arr2 = random.sample(range(1, 101), n)
+'''arr2 = random.sample(range(1, 102), n)
 arr2_copy = arr2.copy()
-arr3 = random.sample(range(1, 101), n)
+arr3 = random.sample(range(1, 102), n)
 arr3_copy = arr3.copy()
-arr4 = random.sample(range(1, 101), n)
+arr4 = random.sample(range(1, 102), n)
 arr4_copy = arr4.copy()
-arr5 = random.sample(range(1, 101), n)
-arr5_copy = arr5.copy()
+arr5 = random.sample(range(1, 102), n)
+arr5_copy = arr5.copy()'''
 
 print("\n\n\n")
 
-test_algo_works(enhanced_selection, "Selection", arr1)
+#test_algo_works(enhanced_selection, "Selection", arr1)
+'''test_algo_works(enhanced_selection, "Selection", arr2)
+test_algo_works(enhanced_selection, "Selection", arr3)
+test_algo_works(enhanced_selection, "Selection", arr4)
+test_algo_works(enhanced_selection, "Selection", arr5)'''
+
+#test_algo_works(enhanced_selection, "Selection", [90, 71, 26, 34, 50, 78, 3, 29, 60, 57])
+
+print(f"Normal Selection runtime: {selectionSort(arr1)[1]}\nEnhanced Selection runtime: {enhanced_selection(arr1)[1]}\nEnhanced Selection is faster" if enhanced_selection(arr1)[1] < selectionSort(arr1)[1] else "Enhanced Selection is not faster", end="\n\n")
 
             
