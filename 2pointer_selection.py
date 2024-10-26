@@ -19,6 +19,7 @@ def enhanced_selection(arr):
                 if arr[p1] < arr[min_idx]:
                     min_idx = p1
                     print("p1 at ", p1," found Min Index: ", min_idx, " with value ", arr[min_idx])
+                    print("p1 at ", p1," found Min Index: ", min_idx, " with value ", arr[min_idx])
                 if arr[p2] < arr[min_idx]:
                     min_idx = p2
                     #print("p2 at ", p2," found Min Index: ", min_idx, " with value ", arr[min_idx])
