@@ -1,5 +1,6 @@
 import random, time
 from algo_testcases import test_algo
+from normal_selection import selectionSort
 
 n = 10000
 
@@ -13,29 +14,6 @@ arr4 = random.sample(range(1, 10001), n)
 arr4_copy = arr4.copy()
 arr5 = random.sample(range(1, 10001), n)
 arr5_copy = arr5.copy()
-
-# Selection sort in Python
-# time complexity O(n*n)
-#sorting by finding min_index
-def selectionSort(array):
-    start_time = time.time()
-    size = len(array)
-    
-    for ind in range(size):
-        min_index = ind
- 
-        for j in range(ind + 1, size):
-            # select the minimum element in every iteration
-            if array[j] < array[min_index]:
-                min_index = j
-         # swapping the elements to sort the array
-        (array[ind], array[min_index]) = (array[min_index], array[ind])
-
-    runtime = time.time() - start_time
-    print(f"--- Normal Selection runtime: {runtime} seconds ---")
-
-    return array, runtime
-
 
 def enhancedSelectionSort(arr):
     start_time = time.time()
