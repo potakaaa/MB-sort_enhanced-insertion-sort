@@ -20,8 +20,8 @@ def test_algo_works(algo, algo_name, arr):
 
     enhanced = algo(arr)[0]
 
-    print("Normal selection sorted: ", sorted(arr))
-    print("Enhanced selection sorted: ", enhanced)
+    print(f"Normal {algo_name} sorted: ", sorted(arr))
+    print(f"Enhanced {algo_name} sorted: ", enhanced)
 
     print(f"Enhanced {algo_name} Sort is working" if enhanced == sorted(arr) else f"Enhanced {algo_name} Sort is not working")
     print()

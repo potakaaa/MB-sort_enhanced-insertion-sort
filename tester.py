@@ -32,6 +32,9 @@ test_algo_works(enhanced_selection, "Selection", arr5)'''
 
 #test_algo_works(enhanced_selection, "Selection", [90, 71, 26, 34, 50, 78, 3, 29, 60, 57])
 
-print(f"Normal Selection runtime: {selectionSort(arr1)[1]}\nEnhanced Selection runtime: {enhanced_selection(arr1)[1]}\nEnhanced Selection is faster" if enhanced_selection(arr1)[1] < selectionSort(arr1)[1] else "Enhanced Selection is not faster", end="\n\n")
+normal_runtime = selectionSort(arr1)[1]
+enhanced_runtime = enhanced_selection(arr1)[1]
 
-            
+print(f"Normal Selection runtime: {normal_runtime}\nEnhanced Selection runtime: {enhanced_runtime}\nEnhanced Selection is faster" if enhanced_runtime < normal_runtime else "Enhanced Selection is not faster", end="\n\n")
+
+#test_algo_works(enhanced_selection, "Selection", arr1)     
