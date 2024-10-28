@@ -23,13 +23,13 @@ t2 = timeit(
 print("Enhanced Selection runtime: ", t1)
 print()
 
-t1 = timeit(
+t3 = timeit(
     "enhanced_selection_merge(arr1)",
     setup="from pointer_selection_merge import enhanced_selection_merge",
     number = 10,
     globals={"arr1":arr1},
 )
-print("Enhanced Selection with Merge runtime: ", t1)
+print("Enhanced Selection with Merge runtime: ", t3)
 print("Enhanced Selection runtime: ", t2)
-print(f"Difference in runtime: {t2 - t1}" if t2 > t1 else f"Difference in runtime: {t1 - t2}")
+print(f"Difference in runtime: {t3 - t2}" if t3 > t2 else f"Difference in runtime: {t2 - t3}")
 print()
