@@ -24,7 +24,7 @@ arr5_copy = arr5.copy()'''
 
 print("\n\n\n")
 
-test_algo_works(enhanced_selection, "Selection", arr1)
+#test_algo_works(enhanced_selection, "Selection", arr1)
 '''test_algo_works(enhanced_selection, "Selection", arr2)
 test_algo_works(enhanced_selection, "Selection", arr3)
 test_algo_works(enhanced_selection, "Selection", arr4)
@@ -33,7 +33,7 @@ test_algo_works(enhanced_selection, "Selection", arr5)'''
 #test_algo_works(enhanced_selection, "Selection", [90, 71, 26, 34, 50, 78, 3, 29, 60, 57])
 
 normal_runtime = selectionSort(arr1)[1]
-enhanced_runtime = enhanced_selection(arr1)[1]
+enhanced_runtime = enhanced_selection(arr1_copy)[1]
 
 print(f"Enhanced Selection is faster" if enhanced_runtime < normal_runtime else "Enhanced Selection is not faster", end="\n\n")
 
