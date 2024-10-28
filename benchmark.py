@@ -14,7 +14,7 @@ t1 = timeit(
 print()
 print("Normal Selection runtime: ", t1)
 
-t1 = timeit(
+t2 = timeit(
     "enhanced_selection(arr1)",
     setup="from pointer_selection import enhanced_selection",
     number = 10,
@@ -30,4 +30,6 @@ t1 = timeit(
     globals={"arr1":arr1},
 )
 print("Enhanced Selection with Merge runtime: ", t1)
+print("Enhanced Selection runtime: ", t2)
+print(f"Difference in runtime: {t2 - t1}" if t2 > t1 else f"Difference in runtime: {t1 - t2}")
 print()
