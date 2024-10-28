@@ -21,7 +21,6 @@ t2 = timeit(
     globals={"arr1":arr1},
 )
 print("Enhanced Selection runtime: ", t1)
-print()
 
 t1 = timeit(
     "enhanced_selection_merge(arr1)",
@@ -29,7 +28,9 @@ t1 = timeit(
     number = 10,
     globals={"arr1":arr1},
 )
+
+
 print("Enhanced Selection with Merge runtime: ", t1)
-print("Enhanced Selection runtime: ", t2)
+print()
 print(f"Difference in runtime: {t2 - t1}" if t2 > t1 else f"Difference in runtime: {t1 - t2}")
 print()
