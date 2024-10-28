@@ -4,13 +4,12 @@ import time
 def enhanced_selection(arr):
     start_time = time.time()
     n = len(arr)
-    swapped = False
     
     for i in range(n//2):
         last = n - 1 - i
         min_idx = i 
         max_idx = i
-        
+        swapped = False
         #print(arr)
 
         for j in range(i+1, n//2 + 1):
@@ -23,9 +22,9 @@ def enhanced_selection(arr):
             if arr[p2] < arr[min_idx]:
                 min_idx = p2
 
+           
             if arr[p1] > arr[max_idx]:
                 max_idx = p1
-
 
             if arr[p2] > arr[max_idx]:
                 max_idx = p2
