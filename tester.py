@@ -9,7 +9,7 @@ arrn = [10, 2, 18, 36, 52, 68, 84, 100, 14, 28,
         40, 54, 68, 82, 96, 16, 30, 44, 58, 72, 
         86, 100, 18, 32, 46, 60, 74]
 
-n = 50000
+n = 10000
 
 arr1 = random.choices(range(1, 1000), k = n)
 arr1_copy = arr1.copy()
@@ -32,9 +32,9 @@ test_algo_works(enhanced_selection, "Selection", arr5)'''
 
 #test_algo_works(enhanced_selection, "Selection", [90, 71, 26, 34, 50, 78, 3, 29, 60, 57])
 
-normal_runtime = selectionSort(arr1)[1]
-enhanced_runtime = enhanced_selection(arr1_copy)[1]
+#normal_runtime = selectionSort(arr1)
+#enhanced_runtime = enhanced_selection(arr1_copy)
 
-print(f"Enhanced Selection is faster" if enhanced_runtime < normal_runtime else "Enhanced Selection is not faster", end="\n\n")
+#print(f"Enhanced Selection is faster" if enhanced_runtime < normal_runtime else "Enhanced Selection is not faster", end="\n\n")
 
 #test_algo_works(enhanced_selection, "Selection", arr1)     

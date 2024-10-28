@@ -1,10 +1,11 @@
 import time
+from time import perf_counter
 
 # Selection sort in Python
 # time complexity O(n*n)
 #sorting by finding min_index
 def selectionSort(array):
-    start_time = time.time()
+    #t1_start = perf_counter() 
     size = len(array)
     
     for ind in range(size):
@@ -17,7 +18,8 @@ def selectionSort(array):
          # swapping the elements to sort the array
         (array[ind], array[min_index]) = (array[min_index], array[ind])
 
-    runtime = time.time() - start_time
-    print(f"--- Normal Selection runtime: {runtime} seconds ---")
+    #t1_stop = perf_counter()
+    #runtime = t1_stop - t1_start
+    #print(f"--- Normal Selection runtime: {runtime} seconds ---")
 
-    return array, runtime
+    return array
