@@ -18,7 +18,7 @@ def test_algo(algo, algo_name, arr):
 def test_algo_works(algo, algo_name, arr):
     print("Unsorted: ", arr)
 
-    enhanced = algo(arr)[0]
+    enhanced = algo(arr)
 
     print(f"Normal {algo_name} sorted: ", sorted(arr))
     print(f"Enhanced {algo_name} sorted: ", enhanced)

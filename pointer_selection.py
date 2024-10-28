@@ -1,8 +1,9 @@
 import time
+from time import perf_counter
 
 
 def enhanced_selection(arr):
-    start_time = time.time()
+    #t1_start = perf_counter() 
     n = len(arr)
     
     for i in range(n//2):
@@ -38,14 +39,10 @@ def enhanced_selection(arr):
         if max_idx != last:
             arr[last], arr[max_idx] = arr[max_idx], arr[last]
             swapped = True
-        
-        if not swapped:
-            runtime = time.time() - start_time
-            print(f"--- Enhanced Selection runtime: {runtime} seconds ---")
-            return arr, runtime
 
-    runtime = time.time() - start_time
-    print(f"--- Enhanced Selection runtime: {runtime} seconds ---")
+    #t1_stop = perf_counter()
+    #runtime = t1_stop - t1_start
+    #print(f"--- Enhanced Selection runtime: {runtime} seconds ---")
 
-    return arr, runtime
+    return arr
 
