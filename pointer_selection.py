@@ -41,7 +41,9 @@ def enhanced_selection(arr):
             swapped = True
         
         if not swapped:
-            break
+            runtime = time.time() - start_time
+            print(f"--- Enhanced Selection runtime: {runtime} seconds ---")
+            return arr, runtime
 
     runtime = time.time() - start_time
     print(f"--- Enhanced Selection runtime: {runtime} seconds ---")
