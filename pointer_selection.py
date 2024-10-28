@@ -3,17 +3,18 @@ import time
 
 def enhanced_selection(arr):
     start_time = time.time()
+    n = len(arr)
     
-    for i in range((len(arr) // 2)):
-        last = len(arr) - 1 - i
+    for i in range(n//2):
+        last = n - 1 - i
         min_idx = i 
         max_idx = i
         
         #print(arr)
 
-        for j in range(i+1, (len(arr) // 2) + 1):
+        for j in range(i+1, n//2 + 1):
             p1 = j
-            p2 = len(arr) - j
+            p2 = n - j
             #print("i = ", i, "j = ", j)
             if arr[p1] < arr[min_idx] or arr[p2] < arr[min_idx]:
                 if arr[p1] < arr[min_idx]:

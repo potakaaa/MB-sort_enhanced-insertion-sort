@@ -11,7 +11,7 @@ arrn = [10, 2, 18, 36, 52, 68, 84, 100, 14, 28,
 
 n = 10000
 
-arr1 = random.choices(arrn, k = n)
+arr1 = random.choices(range(1, 1000), k = n)
 arr1_copy = arr1.copy()
 '''arr2 = random.sample(range(1, 102), n)
 arr2_copy = arr2.copy()
@@ -35,6 +35,6 @@ test_algo_works(enhanced_selection, "Selection", arr5)'''
 normal_runtime = selectionSort(arr1)[1]
 enhanced_runtime = enhanced_selection(arr1)[1]
 
-print(f"Normal Selection runtime: {normal_runtime}\nEnhanced Selection runtime: {enhanced_runtime}\nEnhanced Selection is faster" if enhanced_runtime < normal_runtime else "Enhanced Selection is not faster", end="\n\n")
+print(f"Enhanced Selection is faster" if enhanced_runtime < normal_runtime else "Enhanced Selection is not faster", end="\n\n")
 
 #test_algo_works(enhanced_selection, "Selection", arr1)     
