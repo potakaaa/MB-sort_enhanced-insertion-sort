@@ -13,7 +13,7 @@ perfplot.live(
         enhanced_selection_merge,
     ],
     labels=["Normal Selection", "Enhanced Selection", "Enhanced Selection Merge"],
-    n_range=[2**k for k in range(15)],  
+    n_range=[2**k for k in range(20)],  
     xlabel="Number of elements",
 
 )
