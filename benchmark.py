@@ -11,8 +11,8 @@ t1 = timeit(
     number = 10,
     globals={"arr1":arr1},
 )
-print()
-print("Normal Selection runtime: ", t1)
+'''print()
+print("Normal Selection runtime: ", t1)'''
 
 t2 = timeit(
     "enhanced_selection(arr1)",
@@ -20,17 +20,23 @@ t2 = timeit(
     number = 10,
     globals={"arr1":arr1},
 )
-print("Enhanced Selection runtime: ", t1)
+'''print("Enhanced Selection runtime: ", t1)
+print()'''
 
-t1 = timeit(
+t3 = timeit(
     "enhanced_selection_merge(arr1)",
     setup="from pointer_selection_merge import enhanced_selection_merge",
     number = 10,
     globals={"arr1":arr1},
 )
+'''print("Enhanced Selection with Merge runtime: ", t3)
+print("Enhanced Selection runtime: ", t2)
+print(f"Difference in runtime: {t3 - t2}" if t3 > t2 else f"Difference in runtime: {t2 - t3}")
+print()'''
 
+l = {t1: "Normal Selection Sort", t2: "Enhanced Selection Sort", t3: "Enhanced Selection Merge Sort"}
 
-print("Enhanced Selection with Merge runtime: ", t1)
-print()
-print(f"Difference in runtime: {t2 - t1}" if t2 > t1 else f"Difference in runtime: {t1 - t2}")
+print(f"At {n} datas")
+print(f"Fastest: {l.get(min(l))} @ {min(l)}")
+print(f"Slowest: {l.get(max(l))} @ {max(l)}")
 print()
