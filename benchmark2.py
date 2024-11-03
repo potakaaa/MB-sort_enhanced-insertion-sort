@@ -35,7 +35,7 @@ perfplot.live(
             "Normal Merge Sort", 
             "Radix Sort",
             "Enhanced Insertion Sort 2"],
-    n_range=[2**k for k in range(15)],  
+    n_range=[2**k for k in range(10)],  
     xlabel="Number of elements",
     equality_check=None
     

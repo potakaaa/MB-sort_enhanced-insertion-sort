@@ -1,29 +1,11 @@
 import random
+from binary_search import binary_search
 
 def enhanced_insertion(arr):
     p1 = 1
     p2 = 2
     for i in range(1, len(arr) - 1):
         pass
-def binary_search(arr, val, start, end):
-     
-    if start == end:
-        if arr[start] > val:
-            return start
-        else:
-            return start+1
-
-    if start > end:
-        return start
- 
-    mid = (start+end)//2
-    if arr[mid] < val:
-        return binary_search(arr, val, mid+1, end)
-    elif arr[mid] > val:
-        return binary_search(arr, val, start, mid-1)
-    else:
-        return mid
-    
 
 def enhanced_insertion2(arr):
     n = len(arr) 
@@ -34,7 +16,7 @@ def enhanced_insertion2(arr):
     for i in range(1, n):
         key = arr[i]
         j = i - 1
-        pos = binary_search(arr, key, 0, j)
+        pos = binary_search(arr[:i], key)
 
         # Shift elements and insert
         arr = arr[:pos] + [key] + arr[pos:i] + arr[i+1:]
@@ -49,7 +31,7 @@ def enhanced_insertion2(arr):
 
 # Test the function
 
-arr = list(range(1, 7))
+arr = list(range(1, 8))
 random.shuffle(arr)
 print("Unsorted array:", arr)
 
