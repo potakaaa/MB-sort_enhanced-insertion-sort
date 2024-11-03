@@ -8,11 +8,8 @@ from merge_sort import mergeSort
 from radix_sort import radixSort
 from bubble_sort import bubbleSort
 from insertion_sort import insertionSort
-<<<<<<< HEAD
 from enhanced_insertion import enhanced_insertion
-=======
 from enhanced_insertion import enhanced_insertion2
->>>>>>> a441bb40133133ce2692fd8af95cda708d811fe6
 
 perfplot.live(
     setup = lambda n: np.random.rand(n).tolist(),
@@ -37,7 +34,7 @@ perfplot.live(
             "Default Python Sort", 
             "Normal Merge Sort", 
             "Radix Sort",
-            "Enhanced Insertion Sort"],
+            "Enhanced Insertion Sort 2"],
     n_range=[2**k for k in range(15)],  
     xlabel="Number of elements",
     equality_check=None
