@@ -21,7 +21,8 @@ def binary_search(arr, target):
     return left  # This is the correct insertion index for `target`
 
 # Example usage:
-sorted_arr = [1, 3, 5, 7, 9]
+'''sorted_arr = [1, 3, 5, 7, 9]
 target = 6
 index = binary_search(sorted_arr, target)
 print(f"The insertion index for {target} is {index}.")  # Output: The insertion index for 6 is 3.
+'''
