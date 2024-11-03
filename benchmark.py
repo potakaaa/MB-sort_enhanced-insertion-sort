@@ -34,7 +34,15 @@ print("Enhanced Selection runtime: ", t2)
 print(f"Difference in runtime: {t3 - t2}" if t3 > t2 else f"Difference in runtime: {t2 - t3}")
 print()'''
 
-l = {t1: "Normal Selection Sort", t2: "Enhanced Selection Sort", t3: "Enhanced Selection Merge Sort"}
+t4 = timeit(
+    "enhanced_insertion(arr1)",
+    setup="from enhanced_insertion import enhanced_insertion",
+    number = 10,
+    globals={"arr1":arr1},
+)
+print("Enhanced Insertion runtime: ", t4)
+
+l = {t1: "Normal Selection Sort", t2: "Enhanced Selection Sort", t3: "Enhanced Selection Merge Sort", t4: "Enhanced Insertion Sort"}
 
 print(f"At {n} datas")
 print(f"Fastest: {l.get(min(l))} @ {min(l)}")

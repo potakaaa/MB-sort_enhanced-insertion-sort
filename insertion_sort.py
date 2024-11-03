@@ -15,3 +15,4 @@ def insertionSort(arr):
             arr[j+1] = arr[j]  # Shift elements to the right
             j -= 1
         arr[j+1] = key  # Insert the key in the correct position
+    return arr
