@@ -1,7 +1,7 @@
 import random
 from binary_search import binary_search
 
-def enhanced_insertion3(arr):
+def enhanced_insertion(arr):
     n = len(arr)
     if n <= 1:
         return
