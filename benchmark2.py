@@ -32,7 +32,7 @@ perfplot.live(
             "Default Python Sort", 
             "Normal Merge Sort", 
             "Radix Sort",],
-    n_range=[2**k for k in range(20)],  
+    n_range=[2**k for k in range(18)],  
     xlabel="Number of elements",
     equality_check=None
 )
