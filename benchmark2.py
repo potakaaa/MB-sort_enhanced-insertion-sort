@@ -9,7 +9,7 @@ from radix_sort import radixSort
 from bubble_sort import bubbleSort
 from insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
-from enhanced_insertion import enhanced_insertion2
+from enhanced_insertion import enhanced_insertion3
 
 perfplot.live(
     setup = lambda n: np.random.rand(n).tolist(),
@@ -23,7 +23,7 @@ perfplot.live(
         sorted,
         mergeSort,
         radixSort,
-        enhanced_insertion2,
+        enhanced_insertion3,
     ],
     labels=["Normal Selection", 
             "Enhanced Selection", 
