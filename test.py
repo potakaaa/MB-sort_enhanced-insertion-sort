@@ -1,10 +1,10 @@
 from pointer_selection_merge import enhanced_selection_merge
-from enhanced_insertion import enhanced_insertion3
+from enhanced_insertion import enhanced_insertion
 import random
 
-a = random.choices(range(1, 1000), k = 10)
+a = random.choices(range(1, 1000), k = 10000)
 
 
 #print(sorted(a) == enhanced_selection_merge(a))
 
-print(sorted(a) == enhanced_insertion3(a))
+print(sorted(a) == enhanced_insertion(a))
