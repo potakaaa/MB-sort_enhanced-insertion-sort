@@ -7,7 +7,7 @@ def binary_search(arr, target):
     :param target: The element for which we need the insertion index.
     :return: The index where `target` should be inserted.
     """
-    left, right = 0, len(arr)
+    left, right = 0, len(arr) - 1
 
     while left < right:
         mid = (left + right) // 2
