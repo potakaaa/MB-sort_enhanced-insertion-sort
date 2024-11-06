@@ -10,6 +10,7 @@ from bubble_sort import bubbleSort
 from insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
 from enhanced_insertion_mid import enhanced_insertion2
+from linked_list import list_to_linked_list
 
 perfplot.live(
     setup = lambda n: np.random.rand(n).tolist(),
@@ -20,7 +21,7 @@ perfplot.live(
         bubbleSort,
         insertionSort,
         enhanced_insertion,
-        enhanced_insertion2,
+        lambda arr: enhanced_insertion2(list_to_linked_list(arr)),
         sorted,
         mergeSort,
         radixSort,

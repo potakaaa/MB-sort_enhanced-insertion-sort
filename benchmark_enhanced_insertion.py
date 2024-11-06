@@ -4,6 +4,7 @@ import numpy as np
 import perfplot
 from insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
+from linked_list import LinkedList
 
 n = 5000
 
@@ -27,8 +28,8 @@ t2 = timeit(
 )
 
 t3 = timeit(
-    "enhanced_insertion2(arr1_copy2)",
-    setup="from enhanced_insertion_mid import enhanced_insertion2",
+    "enhanced_insertion2(list_to_linked_list(arr1_copy2))",
+    setup="from enhanced_insertion_mid import enhanced_insertion2\nfrom linked_list import list_to_linked_list",
     number = 10,
     globals={"arr1_copy2":arr1_copy2},
 )
