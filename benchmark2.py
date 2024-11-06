@@ -9,6 +9,7 @@ from radix_sort import radixSort
 from bubble_sort import bubbleSort
 from insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
+from enhanced_insertion_mid import enhanced_insertion2
 
 perfplot.live(
     setup = lambda n: np.random.rand(n).tolist(),
@@ -19,6 +20,7 @@ perfplot.live(
         bubbleSort,
         insertionSort,
         enhanced_insertion,
+        enhanced_insertion2,
         sorted,
         mergeSort,
         radixSort,
@@ -29,6 +31,7 @@ perfplot.live(
             "Bubble Sort",
             "Insertion Sort",
             "Enhanced Insertion Sort",
+            "Enhanced Insertion Sort 2",
             "Default Python Sort", 
             "Normal Merge Sort", 
             "Radix Sort",],

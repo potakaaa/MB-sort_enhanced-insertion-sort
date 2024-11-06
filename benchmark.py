@@ -41,7 +41,7 @@ t4 = timeit(
 
 t5 = timeit(
     "enhanced_insertion2(arr1_copy4)",
-    setup="from enhanced_insertion_max import enhanced_insertion2",
+    setup="from enhanced_insertion_mid import enhanced_insertion2",
     number = 10,
     globals={"arr1_copy4":arr1_copy4},
 )

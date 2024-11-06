@@ -7,13 +7,13 @@ def enhanced_insertion(arr):
     if n <= 1:
         return
     
-    min_index, i = 1, 0
+    i = 1
     
     while i < n:
         key, j = arr[i], i - 1
 
-        if key <= arr[min_index]:
-            arr.insert(min_index, arr.pop(i))
+        if key <= arr[0]:
+            arr.insert(0, arr.pop(i))
         
         elif key < arr[j]:
             pos = binary_search(arr[:i], key)
