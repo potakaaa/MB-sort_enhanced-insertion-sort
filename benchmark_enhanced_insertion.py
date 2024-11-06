@@ -5,11 +5,12 @@ import perfplot
 from insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
 
-n = 5000
+n = 20000
 
 arr1 = random.choices(range(1, 1000), k = n)
 arr1_copy = arr1.copy()
 arr1_copy2 = arr1.copy()
+arr1_copy3 = arr1.copy()
 
 t1 = timeit(
     "insertionSort(arr1)",
@@ -26,21 +27,30 @@ t2 = timeit(
 )
 
 t3 = timeit(
-    "sorted(arr1_copy2)",
+    "enhanced_insertion2(arr1_copy2)",
+    setup="from enhanced_insertion_max import enhanced_insertion2",
     number = 10,
     globals={"arr1_copy2":arr1_copy2},
 )
 
-l = {t1: "Normal Insertion Sort", t2: "Enhanced Insertion Sort", t3: "Power Sort"}
+t4 = timeit(
+    "sorted(arr1_copy3)",
+    number = 10,
+    globals={"arr1_copy3":arr1_copy3},
+)
 
+l = {t1: "Normal Insertion Sort", t2: "Enhanced Insertion Sort", t3: "Enhanced Insertion Sort Max", t4: "Power Sort"}
+l_sorted = dict(sorted(l.items()))
 '''print(f"At {n} datas")
 print(f"Fastest: {l.get(min(l))} @ {min(l)}")
 print(f"Slowest: {l.get(max(l))} @ {max(l)}")
 print()'''
 
 print()
-for key, value in l.items():
-    print(f"{value} @ {key} seconds")
+i = 1
+for key, value in l_sorted.items():
+    print(f"{i}. {value} @ {key} seconds")
+    i += 1
 print()
 
 '''perfplot.live(

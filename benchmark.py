@@ -4,6 +4,12 @@ import random
 n = 5000
 
 arr1 = random.choices(range(1, 1000), k = n)
+arr1_copy = arr1.copy()
+arr1_copy2 = arr1.copy()
+arr1_copy3 = arr1.copy()
+arr1_copy4 = arr1.copy()
+arr1_copy5 = arr1.copy()
+arr1_copy6 = arr1.copy()
 
 t1 = timeit(
     "selectionSort(arr1)",
@@ -11,40 +17,71 @@ t1 = timeit(
     number = 10,
     globals={"arr1":arr1},
 )
-'''print()
-print("Normal Selection runtime: ", t1)'''
 
 t2 = timeit(
-    "enhanced_selection(arr1)",
+    "enhanced_selection(arr1_copy)",
     setup="from pointer_selection import enhanced_selection",
     number = 10,
-    globals={"arr1":arr1},
+    globals={"arr1_copy":arr1_copy},
 )
-'''print("Enhanced Selection runtime: ", t1)
-print()'''
 
 t3 = timeit(
-    "enhanced_selection_merge(arr1)",
+    "enhanced_selection_merge(arr1_copy2)",
     setup="from pointer_selection_merge import enhanced_selection_merge",
     number = 10,
-    globals={"arr1":arr1},
+    globals={"arr1_copy2":arr1_copy2},
 )
-'''print("Enhanced Selection with Merge runtime: ", t3)
-print("Enhanced Selection runtime: ", t2)
-print(f"Difference in runtime: {t3 - t2}" if t3 > t2 else f"Difference in runtime: {t2 - t3}")
-print()'''
 
 t4 = timeit(
-    "enhanced_insertion(arr1)",
+    "enhanced_insertion(arr1_copy3)",
     setup="from enhanced_insertion import enhanced_insertion",
     number = 10,
-    globals={"arr1":arr1},
+    globals={"arr1_copy3":arr1_copy3},
 )
-print("Enhanced Insertion runtime: ", t4)
 
-l = {t1: "Normal Selection Sort", t2: "Enhanced Selection Sort", t3: "Enhanced Selection Merge Sort", t4: "Enhanced Insertion Sort"}
+t5 = timeit(
+    "enhanced_insertion2(arr1_copy4)",
+    setup="from enhanced_insertion_max import enhanced_insertion2",
+    number = 10,
+    globals={"arr1_copy4":arr1_copy4},
+)
 
-print(f"At {n} datas")
-print(f"Fastest: {l.get(min(l))} @ {min(l)}")
-print(f"Slowest: {l.get(max(l))} @ {max(l)}")
+t6 = timeit(
+    "sorted(arr1_copy5)",
+    number = 10,
+    globals={"arr1_copy5":arr1_copy5},
+)
+
+t7 = timeit(
+    "insertionSort(arr1_copy6)",
+    setup="from insertion_sort import insertionSort",
+    number = 10,
+    globals={"arr1_copy6":arr1_copy6},
+)
+
+
+
+
+
+
+
+
+l = {
+    t1: "Normal Selection Sort", 
+    t2: "Enhanced Selection Sort", 
+    t3: "Enhanced Selection Merge Sort", 
+    t4: "Enhanced Insertion Sort",
+    t5: "Enhanced Insertion Sort Max",
+    t6: "Power Sort",
+
+    
+    }
+
+l_sorted = dict(sorted(l.items()))
+
+print()
+i = 1
+for key, value in l_sorted.items():
+    print(f"{i}. {value} @ {key} seconds")
+    i += 1
 print()
