@@ -27,7 +27,7 @@ perfplot.live(
         sorted,
         mergeSort,
         radixSort,
-        fastbit_radix_like_sort,
+        
     ],
     labels=["Normal Selection", 
             "Enhanced Selection", 
@@ -39,7 +39,7 @@ perfplot.live(
             "Default Python Sort", 
             "Normal Merge Sort", 
             "Radix Sort",
-            "Jesreal Radix Sort",],
+            ],
     n_range=[2**k for k in range(15)],  
     xlabel="Number of elements",
     equality_check=None
