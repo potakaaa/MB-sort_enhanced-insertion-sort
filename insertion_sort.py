@@ -1,7 +1,4 @@
 
-
-
-
 def insertionSort(arr):
     n = len(arr)  # Get the length of the array
       

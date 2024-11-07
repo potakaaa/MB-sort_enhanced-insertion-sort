@@ -27,12 +27,12 @@ t2 = timeit(
     globals={"arr1_copy":arr1_copy},
 )
 
-t3 = timeit(
+'''t3 = timeit(
     "enhanced_insertion2(list_to_linked_list(arr1_copy2))",
     setup="from enhanced_insertion_mid import enhanced_insertion2\nfrom linked_list import list_to_linked_list",
     number = 10,
     globals={"arr1_copy2":arr1_copy2},
-)
+)'''
 
 t4 = timeit(
     "sorted(arr1_copy3)",
@@ -40,7 +40,7 @@ t4 = timeit(
     globals={"arr1_copy3":arr1_copy3},
 )
 
-l = {t1: "Normal Insertion Sort", t2: "Enhanced Insertion Sort", t3: "Enhanced Insertion Sort Mid", t4: "Power Sort"}
+l = {t1: "Normal Insertion Sort", t2: "Enhanced Insertion Sort", t4: "Power Sort"}
 l_sorted = dict(sorted(l.items()))
 '''print(f"At {n} datas")
 print(f"Fastest: {l.get(min(l))} @ {min(l)}")

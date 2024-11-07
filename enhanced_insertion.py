@@ -1,7 +1,5 @@
 from binary_search import binary_search
 
-
-
 def enhanced_insertion(arr):
     n = len(arr)
     if n <= 1:
