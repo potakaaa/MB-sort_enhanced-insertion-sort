@@ -9,7 +9,7 @@ mylist = mylist2.copy()
 
 t1 = timeit(
     "insertionSort(mylist)",
-    setup="from insertion_sort import insertionSort",
+    setup="from normal_algo.insertion_sort import insertionSort",
     number = 1,
     globals={"mylist":mylist},
 )

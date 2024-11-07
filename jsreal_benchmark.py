@@ -1,8 +1,8 @@
 import perfplot
 import numpy as np
-from jesreal_sort import fastbit_radix_like_sort
-from normal_fastbit_radix import fastbit_radix_sort
-from radix_sort import radixSort
+from enhanced_algo.jesreal_sort import fastbit_radix_like_sort
+from normal_algo.normal_fastbit_radix import fastbit_radix_sort
+from normal_algo.radix_sort import radixSort
 
 perfplot.live(
     setup=lambda n: np.random.randint(0, 1000, n).tolist(),

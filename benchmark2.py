@@ -1,18 +1,18 @@
 import numpy as np
 import perfplot
 
-from normal_selection import selectionSort
-from pointer_selection import enhanced_selection
-from pointer_selection_merge import enhanced_selection_merge
-from merge_sort import mergeSort
-from radix_sort import radixSort
-from bubble_sort import bubbleSort
-from insertion_sort import insertionSort
+from normal_algo.normal_selection import selectionSort
+from enhanced_algo.pointer_selection import enhanced_selection
+from enhanced_algo.pointer_selection_merge import enhanced_selection_merge
+from normal_algo.merge_sort import mergeSort
+from normal_algo.radix_sort import radixSort
+from normal_algo.bubble_sort import bubbleSort
+from normal_algo.insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
 from enhanced_insertion_mid import enhanced_insertion2
-from linked_list import list_to_linked_list
-from jesreal_sort import fastbit_radix_like_sort
-from normal_fastbit_radix import fastbit_radix_sort
+from others.linked_list import list_to_linked_list
+from enhanced_algo.jesreal_sort import fastbit_radix_like_sort
+from normal_algo.normal_fastbit_radix import fastbit_radix_sort
 
 perfplot.live(
     setup = lambda n: np.random.rand(n).tolist(),

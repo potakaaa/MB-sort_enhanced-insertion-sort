@@ -2,9 +2,9 @@ from timeit import timeit
 import random
 import numpy as np
 import perfplot
-from insertion_sort import insertionSort
+from normal_algo.insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
-from linked_list import LinkedList
+from others.linked_list import LinkedList
 
 n = 5000
 
@@ -15,7 +15,7 @@ arr1_copy3 = arr1.copy()
 
 t1 = timeit(
     "insertionSort(arr1)",
-    setup="from insertion_sort import insertionSort",
+    setup="from normal_algo.insertion_sort import insertionSort",
     number = 10,
     globals={"arr1":arr1},
 )

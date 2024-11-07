@@ -1,5 +1,5 @@
 from binary_search import binary_search
-from linked_list import LinkedList
+from others.linked_list import LinkedList
 
 def enhanced_insertion2(linked_list):
     n = linked_list.sizeOfLL()
