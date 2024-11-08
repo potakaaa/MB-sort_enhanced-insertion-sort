@@ -6,7 +6,7 @@ from normal_algo.insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
 from others.linked_list import LinkedList
 
-n = 5000
+n = 10_000
 
 arr1 = random.choices(range(1, 1000), k = n)
 arr1_copy = arr1.copy()
@@ -47,13 +47,23 @@ print(f"Fastest: {l.get(min(l))} @ {min(l)}")
 print(f"Slowest: {l.get(max(l))} @ {max(l)}")
 print()'''
 
+i, runtime = 1, []
+
+for key, value in l.items():
+    runtime.append(key)
+
 print()
-i = 1
 print(f"At {n} datas")
 for key, value in l_sorted.items():
     print(f"{i}. {value} @ {key} seconds")
     i += 1
 print()
+
+
+improv_per = ((runtime[1] - runtime[2]) / runtime[1]) * 100
+
+
+print(f"Improvement Percentage: {round(improv_per)} % | {"Slower" if list(l_sorted.values())[1] == "Normal Insertion Sort" else "Faster"}")
 
 '''perfplot.live(
     setup = lambda n: np.random.rand(n).tolist(),
