@@ -1,21 +1,21 @@
 import random
 
-def nearly_sorted(size, disorder_factor=0.1):
+def nearly_sort(arr, disorder_factor=0.1):
     """
-    Generates a nearly sorted array with a given level of disorder.
+    Takes an existing array and nearly sorts it by introducing a small amount of disorder.
 
     Parameters:
-    - size (int): The number of elements in the array.
-    - disorder_factor (float): The fraction of elements to swap, controlling the disorder level. 
-                               (0.1 = 10% of elements swapped)
+    - arr (list): The array to be nearly sorted.
+    - disorder_factor (float): The fraction of elements to swap, controlling the disorder level.
 
     Returns:
-    - list: A nearly sorted array.
+    - list: A nearly sorted version of the original array.
     """
-    # Create a sorted array of the specified size
-    arr = list(range(1, size + 1))
+    # Copy the original array to avoid modifying it in-place
+    arr = sorted(arr)
     
     # Calculate the number of swaps based on the disorder factor
+    size = len(arr)
     num_swaps = int(size * disorder_factor)
     
     # Perform the swaps to introduce disorder
