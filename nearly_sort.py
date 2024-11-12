@@ -1,6 +1,6 @@
 import random
 
-def nearly_sort(arr, disorder_factor=0.1):
+def nearly_sorted(arr, disorder_factor=0.1):
     """
     Takes an existing array and nearly sorts it by introducing a small amount of disorder.
 
