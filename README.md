@@ -1,7 +1,3 @@
-Here's the revised README without the reference to small to medium datasets:
-
----
-
 # MB-sort: Enhanced Insertion Sort
 
 ### Efficient, In-Place, and Stable Sorting Algorithm
