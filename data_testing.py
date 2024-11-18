@@ -15,7 +15,7 @@ t1 = timeit(
 )
 
 t2 = timeit(
-    "enhanced_insertion(mylist)",
+    "enhanced_insertion(mylist2)",
     setup="from enhanced_insertion import enhanced_insertion",
     number = 1,
     globals={"mylist2":mylist2},

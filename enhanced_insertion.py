@@ -12,10 +12,12 @@ def enhanced_insertion(arr):
 
         if key <= arr[0]:
             arr.insert(0, arr.pop(i))
+            #arr = [key] + arr[:i] + arr[i+1:] 
         
         elif key < arr[j]:
             pos = binary_search(arr[:i], key)
             arr.insert(pos, arr.pop(i))
+            #arr = arr[:pos] + [key] + arr[pos+1:i] + arr[i+1:]
 
         i += 1
 
