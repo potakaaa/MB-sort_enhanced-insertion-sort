@@ -21,7 +21,7 @@ t2 = timeit(
     globals={"mylist2":mylist2},
 )
 
-l = {t1: "Normal Insertion Sort", t2: "Enhanced Insertion Sort"}
+l = {t1: "Normal Insertion Sort", t2: "MB Sort"}
 
 print(f"At {len(mylist)} datas")
 print(f"Fastest: {l.get(min(l))} @ {min(l)}")
