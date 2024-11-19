@@ -1,29 +1,37 @@
 def mergeSort(arr):
-    if len(arr) <= 1:
-        return arr
+    if len(arr) > 1:
 
-    mid = len(arr) // 2
-    leftHalf = arr[:mid]
-    rightHalf = arr[mid:]
+        # Create sub_array2 ← A[start..mid] and sub_array2 ← A[mid+1..end]
+        mid = len(arr)//2
+        sub_array1 = arr[:mid]
+        sub_array2 = arr[mid:]
 
-    sortedLeft = mergeSort(leftHalf)
-    sortedRight = mergeSort(rightHalf)
+        # Sort the two halves
+        mergeSort(sub_array1)
+        mergeSort(sub_array2)
+       
+        # Initial values for pointers that we use to keep track of where we are in each array
+        i = j = k = 0
 
-    return merge(sortedLeft, sortedRight)
+    # Until we reach the end of either start or end, pick larger among
+    # elements start and end and place them in the correct position in the sorted array
+        while i < len(sub_array1) and j < len(sub_array2):
+            if sub_array1[i] < sub_array2[j]:
+                arr[k] = sub_array1[i]
+                i += 1
+            else:
+                arr[k] = sub_array2[j]
+                j += 1
+            k += 1
 
-def merge(left, right):
-    result = []
-    i = j = 0
-
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
+    # When all elements are traversed in either arr1 or arr2,
+    # pick up the remaining elements and put in sorted array
+        while i < len(sub_array1):
+            arr[k] = sub_array1[i]
             i += 1
-        else:
-            result.append(right[j])
+            k += 1
+
+        while j < len(sub_array2):
+            arr[k] = sub_array2[j]
             j += 1
-
-    result.extend(left[i:])
-    result.extend(right[j:])
-
-    return result
+            k += 1
