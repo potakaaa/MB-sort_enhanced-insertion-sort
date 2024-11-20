@@ -5,11 +5,12 @@ from normal_algo.normal_selection import selectionSort
 from normal_algo.merge_sort import mergeSort
 from normal_algo.radix_sort import radixSort
 from normal_algo.bubble_sort import bubbleSort
+from normal_algo.quick_sort import quickSort
 from normal_algo.insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
 
-test = perfplot.bench(
-    setup = lambda n: np.random.rand(n).tolist(),
+test = perfplot.show(
+    setup = lambda n: np.random.randint(1000, size=n),
     kernels=[
         selectionSort,
         bubbleSort,
@@ -17,7 +18,6 @@ test = perfplot.bench(
         enhanced_insertion,
         mergeSort,
         radixSort,
-        
     ],
     labels=["Normal Selection", 
             "Bubble Sort",
@@ -26,9 +26,11 @@ test = perfplot.bench(
             "Normal Merge Sort", 
             "Radix Sort",
             ],
-    n_range=[2**k for k in range(15)],  
+    n_range=[2**k for k in range(17)],  
     xlabel="Number of elements",
-    equality_check=None
+    equality_check=None,
+    logy=True,
+    logx=True,
 )
 
 print(test)
