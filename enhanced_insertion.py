@@ -5,22 +5,6 @@ def enhanced_insertion(arr):
     if n <= 1:
         return
     
-    '''
-    OLD MB SORT LOOP
-    while i < n:
-        key, j = arr[i], i - 1
-
-        if key <= arr[0]:
-            arr.insert(0, arr.pop(i))
-        
-        elif key < arr[j]:
-            pos = binary_search(arr[:i], key)
-            arr.insert(pos, arr.pop(i))
-
-        i += 1
-'''
-    
-    # NEW MB SORT LOOP
     for i in range(1, n):
         key, j = arr[i], i - 1
 
