@@ -1,7 +1,7 @@
 from benchmark10x_func import *
 
-test_range = 1_000
-test = 3 #0 for random, 1 for sorted, 2 for nearly sorted, 3 for reverse sorted
+test_range = 100_000
+test = 0 #0 for random, 1 for sorted, 2 for nearly sorted, 3 for reverse sorted
 rand = ["Random", "Sorted", "Nearly Sorted", "Reverse Sorted"]
 
 print("For random datas:")

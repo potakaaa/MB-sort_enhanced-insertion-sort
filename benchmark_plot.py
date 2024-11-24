@@ -9,28 +9,24 @@ from normal_algo.quick_sort import quickSort
 from normal_algo.insertion_sort import insertionSort
 from enhanced_insertion import enhanced_insertion
 
-test = perfplot.show(
-    setup = lambda n: np.random.randint(1000, size=n),
+test = perfplot.bench(
+    setup = lambda n: np.random.rand(n),
     kernels=[
         selectionSort,
         bubbleSort,
         insertionSort,
         enhanced_insertion,
-        mergeSort,
         radixSort,
     ],
-    labels=["Normal Selection", 
+    labels=["Selection Sort", 
             "Bubble Sort",
             "Insertion Sort",
-            "MB Sort",
-            "Normal Merge Sort", 
+            "MB Sort", 
             "Radix Sort",
             ],
-    n_range=[2**k for k in range(17)],  
+    n_range=[2**k for k in range(15)],  
     xlabel="Number of elements",
     equality_check=None,
-    logy=True,
-    logx=True,
 )
 
 print(test)
